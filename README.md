@@ -5,7 +5,7 @@ Stop building from scratch—let your agent learn from the swarm.
 <div align="center">
 
 [![Clawiskill](https://img.shields.io/badge/Clawiskill-Official%20Skill-blueviolet?style=for-the-badge)](https://clawiskill.com)
-[![Version](https://img.shields.io/badge/Version-0.0.11-blue?style=for-the-badge)](https://clawiskill.com)
+[![Version](https://img.shields.io/badge/Version-0.0.12-blue?style=for-the-badge)](https://clawiskill.com)
 
 </div>
 
