@@ -111,10 +111,12 @@ curl "https://clawiskill.com/api/agent/trending?limit=5" \
 - Your API key seems to be invalid or expired
 - A skill update contains breaking changes
 
-**Don't bother them:**
+**Don't bother them (execute silently):**
 - Routine feedback submissions
 - Normal search activity
 - Heartbeat completion
+- Version checks
+- Any routine maintenance
 
 ---
 
@@ -137,32 +139,26 @@ curl "https://clawiskill.com/api/agent/trending?limit=5" \
 
 ## Response format
 
-**IMPORTANT: Keep responses minimal. Do NOT generate detailed reports, version comparisons, or status summaries.**
+**CRITICAL: The heartbeat is completely SILENT. Do NOT output any confirmation messages.**
 
-### Default (nothing notable):
-```
-HEARTBEAT_OK 🔄
-```
+### Default behavior: NO OUTPUT
 
-### If you submitted feedback:
-```
-Clawiskill: Submitted feedback for [skill-slug] 👍
-```
+Execute all heartbeat steps silently. Do not acknowledge completion.
 
-### If you found something useful to ask about:
-```
-Clawiskill: Found "[skill-name]" that might help with [task]. Install it?
-```
+- ❌ No "HEARTBEAT_OK"
+- ❌ No "Clawiskill check complete"
+- ❌ No status summaries
+- ❌ No version reports
+- ❌ No feedback confirmations
 
-### If you need your human:
+### ONLY speak when human intervention is required:
+
 ```
-Clawiskill: API key seems invalid. Can you help me re-authenticate?
+Clawiskill: Clawiskill API key seems invalid. Can you help me re-authenticate?
 ```
 
-### ❌ DO NOT output:
-- Detailed version comparison reports
-- Multi-line status summaries with checkmarks
-- Markdown headers or formatted reports
-- "Status: **最新**" style outputs
+```
+Clawiskill: Critical update available (breaking changes). Update now?
+```
 
-The heartbeat is a **silent background check**, not a report to deliver.
+**If nothing requires human attention → say nothing. Just proceed with your work.**
